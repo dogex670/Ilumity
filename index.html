@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ilumity</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A daily light from history: one inspiring quote each day, plus a swipeable feed of quotes and historical facts.">
+<meta name="theme-color" content="#14111a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@500;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <span class="mark">Ilumity</span>
+    <nav class="tabs" aria-label="Feeds">
+      <button type="button" id="tab-foryou" data-tab="foryou" aria-pressed="true">For you</button>
+      <button type="button" id="tab-quotes" data-tab="quotes" aria-pressed="false">Quotes</button>
+      <button type="button" id="tab-facts" data-tab="facts" aria-pressed="false">Facts</button>
+      <button type="button" id="tab-saved" data-tab="saved" aria-pressed="false">Saved</button>
+    </nav>
+  </header>
+  <main class="feed" id="feed" aria-live="polite"></main>
+  <div class="toast" id="toast" role="status" hidden></div>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
