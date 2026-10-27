@@ -8,6 +8,7 @@
   ALL.forEach(function (x) { BY_ID[x.id] = x; });
 
   var ERA_LABEL = { ancient: "Ancient world", medieval: "Middle Ages", "early-modern": "Early modern", modern: "Modern era" };
+  var ART = window.ILUMITY_ART || {};
   var feed = document.getElementById("feed");
   var toastEl = document.getElementById("toast");
 
@@ -98,6 +99,7 @@
     var hint = opts.hint ? '<div class="hint" aria-hidden="true">Swipe up for more</div>' : "";
     return (
       '<article class="card" data-id="' + item.id + '" data-era="' + item.era + '">' +
+      (ART[item.art] ? '<svg class="art" viewBox="-10 -10 220 220" aria-hidden="true" focusable="false">' + ART[item.art] + "</svg>" : "") +
       '<div class="body">' + badge + inner + "</div>" +
       '<div class="rail">' +
       '<button type="button" class="act" data-save="' + item.id + '" aria-pressed="' + on + '" aria-label="Save">' + ICON_SAVE + '<span class="lbl">' + (on ? "Saved" : "Save") + "</span></button>" +

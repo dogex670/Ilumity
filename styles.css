@@ -160,3 +160,24 @@ body {
   .feed { scroll-behavior: auto; }
 }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Background line art: one motif per card, drawn faintly in lamplight gold
+   in the open space above the text. */
+.art {
+  position: absolute; z-index: 0; pointer-events: none;
+  top: calc(env(safe-area-inset-top, 0px) + 62px);
+  right: -2%;
+  width: min(80vw, 46vh, 420px); height: auto; max-width: 100%;
+  fill: none; stroke: var(--gold); stroke-width: 1.3;
+  stroke-linecap: round; stroke-linejoin: round;
+  opacity: 0.3;
+  animation: drift 14s ease-in-out infinite alternate;
+}
+.art * { vector-effect: non-scaling-stroke; }
+.body, .rail { position: relative; z-index: 1; }
+@keyframes drift {
+  from { transform: translate(0, 0) rotate(0deg); }
+  to { transform: translate(-10px, 8px) rotate(-2deg); }
+}
+@media (min-aspect-ratio: 1/1) { .art { right: 6%; top: 50%; translate: 0 -50%; width: min(42vw, 70vh); } }
+@media (prefers-reduced-motion: reduce) { .art { animation: none; } }

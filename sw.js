@@ -1,6 +1,6 @@
 // Offline support: cache the app shell, serve cache first, refresh in the background.
-const CACHE = "ilumity-v1";
-const SHELL = ["./", "index.html", "styles.css", "app.js", "data.js", "manifest.webmanifest", "icon.svg"];
+const CACHE = "ilumity-v2";
+const SHELL = ["./", "index.html", "styles.css", "app.js", "data.js", "art.js", "manifest.webmanifest", "icon.svg"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
